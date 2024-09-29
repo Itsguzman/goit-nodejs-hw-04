@@ -8,6 +8,7 @@ console.log(dbPath);
 const listContacts = async () => {
   try {
     const contactList = await fs.readFile(dbPath);
+    console.log(JSON.parse(contactList));
     return JSON.parse(contactList);
   } catch (error) {
     console.error(error.message);

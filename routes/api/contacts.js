@@ -6,6 +6,7 @@ import {
   getContactById,
   removeContact,
   updateContact,
+  updateStatusContact,
 } from "../../contactControllers/contactsController.js";
 
 const router = express.Router();
@@ -20,4 +21,6 @@ router.delete("/:contactId", removeContact);
 
 router.put("/:contactId", updateContact);
 
-export default router;
+router.patch("/:contactId/favorite/", updateStatusContact);
+
+export { router };
